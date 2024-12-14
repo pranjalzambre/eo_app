@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Even Odd App By Pranjal</title>
+        <style>
+            *{font-size:35px;font-family:Arial, Helvetica, sans-serif;}
+            body{background-color:turquoise;}
+            h1{background-color: black;color:antiquewhite;width:60%;border-radius: 20px;}
+            .nav{background-color: black;}
+            .nav a{color:antiquewhite;text-decoration: none;margin:50px;}
+            h2{border:solid;width:50%;border-radius: 20px;background-color: lightcyan;color:black;}
+            
+        </style>    
+    </head>
+    <body>
+        <center>    
+            <div class="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+            </div>    
+            <br/>
+            <h1>Even Odd App</h1>
+            <form onsubmit="check()">
+                <br/><br/>
+                <label>Enter Number:</label>
+                <input type="number" id="num"  step="any" placeholder=" enter number..."style="width:50%;border-radius:20px;"/>
+                <br/><br/>
+                <input type="submit" value=" Find Even/Odd " style="background-color: black;color:aliceblue;border-radius:20px;"/>
+            </form>   
+            <h2 id="msg"/>
+            <script>
+                function check()
+                {
+                    event.preventDefault();
+                    let num=document.getElementById("num");
+                    let msg=document.getElementById("msg");
+
+                    if(num.value==="")
+                    {
+                        alert("please enter number");
+                        msg.innerHTML="";
+                        num.focus();
+                        return;
+                    }
+                    let n=parseFloat(num.value);
+                    let r=n%2===0 ? "even":"odd";
+                    msg.innerHTML=r;
+                }
+            </script>   
+        </center>    
+    </body>    
+</html>
